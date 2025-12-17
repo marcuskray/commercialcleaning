@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite CleanPro - Professional Commercial Cleaning Services for Offices & Industrial Spaces</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #1e3a5f;
+            color: #fff;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-top {
+            background: #152a45;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .header-top a {
+            color: #64b5f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #64b5f6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .office-care-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .office-care-badge a {
+            color: #64b5f6;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #1e3a5f;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .trust-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            padding: 1rem;
+        }
+
+        .trust-item h3 {
+            color: #1e3a5f;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Featured Service Section */
+        .featured-service {
+            background: linear-gradient(135deg, #2c5f8d 0%, #1e3a5f 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .featured-service h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-service p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .featured-service a {
+            color: #64b5f6;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #64b5f6;
+            padding-bottom: 3px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #64b5f6;
+        }
+
+        .service-card h3 {
+            color: #1e3a5f;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card ul li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+
+        .service-card ul li:before {
+            content: "✓ ";
+            color: #4caf50;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .learn-more {
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .learn-more:hover {
+            color: #64b5f6;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: #f8f9fa;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 10px;
+        }
+
+        .why-choose h2 {
+            text-align: center;
+            color: #1e3a5f;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Blog Preview */
+        .blog-preview {
+            margin: 4rem 0;
+        }
+
+        .blog-preview h2 {
+            color: #1e3a5f;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card h3 {
+            color: #1e3a5f;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a5f;
+            color: #fff;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #b0c4de;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #64b5f6;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #b0c4de;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .services-grid,
+            .features-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            Trusted Commercial Cleaning Since 2005 | <a href="#about">A Division of Office Care Inc.</a>
+        </div>
+        <nav>
+            <a href="#home" class="logo">Elite CleanPro</a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#cleaning-guide">Cleaning Guide</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#plans">Service Plans</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="office-care-badge">
+                <a href="https://officecareinc.com" target="_blank">⭐ Powered by Office Care Inc.</a>
+            </div>
+            <h1>Professional Commercial Cleaning Services for Your Business</h1>
+            <p>Trusted by 500+ businesses for office and industrial cleaning excellence</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+                <a href="#services" class="btn btn-secondary">View Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-content">
+            <div class="trust-item">
+                <h3>18+</h3>
+                <p>Years in Business</p>
+            </div>
+            <div class="trust-item">
+                <h3>500+</h3>
+                <p>Satisfied Clients</p>
+            </div>
+            <div class="trust-item">
+                <h3>100%</h3>
+                <p>Satisfaction Guarantee</p>
+            </div>
+            <div class="trust-item">
+                <h3>24/7</h3>
+                <p>Emergency Service</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Featured Service Section -->
+        <section class="featured-service">
+            <h2>Comprehensive Commercial Cleaning Services</h2>
+            <p>Specializing in office environments and industrial spaces with certified professionals and eco-friendly solutions</p>
+            <a href="https://officecareinc.com/commercial-cleaning-services" target="_blank">
+                Learn More About Our Commercial Cleaning Services for Offices & Industrial Spaces →
+            </a>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2 style="text-align: center; color: #1e3a5f; font-size: 2.5rem; margin-bottom: 3rem;">Our Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🏢 Office Cleaning</h3>
+                    <p>Complete janitorial services for professional office environments</p>
+                    <ul>
+                        <li>Daily maintenance cleaning</li>
+                        <li>Restroom sanitization</li>
+                        <li>Break room services</li>
+                        <li>Desk and cubicle cleaning</li>
+                        <li>Trash removal & recycling</li>
+                    </ul>
+                    <a href="#office-cleaning" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>🏭 Industrial Cleaning</h3>
+                    <p>Heavy-duty cleaning for manufacturing and warehouse facilities</p>
+                    <ul>
+                        <li>Manufacturing floor cleaning</li>
+                        <li>Equipment degreasing</li>
+                        <li>High-ceiling maintenance</li>
+                        <li>Warehouse organization</li>
+                        <li>Safety compliance cleaning</li>
+                    </ul>
+                    <a href="#industrial-cleaning" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>🏥 Medical Facility Cleaning</h3>
+                    <p>Healthcare-grade sanitization for medical environments</p>
+                    <ul>
+                        <li>OSHA compliant protocols</li>
+                        <li>Exam room sanitization</li>
+                        <li>Biohazard cleanup</li>
+                        <li>Infection control procedures</li>
+                        <li>Specialized medical training</li>
+                    </ul>
+                    <a href="#medical-cleaning" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>🛍️ Retail Space Cleaning</h3>
+                    <p>Customer-focused cleaning for retail environments</p>
+                    <ul>
+                        <li>Store floor maintenance</li>
+                        <li>Window and glass cleaning</li>
+                        <li>Fitting room sanitization</li>
+                        <li>Point-of-sale cleaning</li>
+                        <li>After-hours service</li>
+                    </ul>
+                    <a href="#retail-cleaning" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>🔧 Post-Construction Cleaning</h3>
+                    <p>Thorough cleanup after construction or renovation projects</p>
+                    <ul>
+                        <li>Debris removal</li>
+                        <li>Dust elimination</li>
+                        <li>Floor preparation</li>
+                        <li>Window cleaning</li>
+                        <li>Final touch detailing</li>
+                    </ul>
+                    <a href="#construction-cleaning" class="learn-more">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>⚡ Specialized Services</h3>
+                    <p>Custom cleaning solutions for unique requirements</p>
+                    <ul>
+                        <li>Carpet deep cleaning</li>
+                        <li>Floor stripping & waxing</li>
+                        <li>Pressure washing</li>
+                        <li>Emergency cleanup</li>
+                        <li>Event services</li>
+                    </ul>
+                    <a href="#specialized-services" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose">
+            <h2>Why Choose Elite CleanPro?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Certified Professionals</h3>
+                    <p>ISSA CIMS certified team with ongoing training and background checks</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Eco-Friendly Products</h3>
+                    <p>Green Seal certified cleaning solutions safe for people and planet</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>24/7 availability with customized cleaning schedules to fit your needs</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✅</div>
+                    <h3>100% Satisfaction Guarantee</h3>
+                    <p>We stand behind our work with complete satisfaction promise</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Fully Insured & Bonded</h3>
+                    <p>Comprehensive insurance coverage for your complete peace of mind</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <h3>State-of-the-Art Equipment</h3>
+                    <p>Latest cleaning technology for superior results and efficiency</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Preview -->
+        <section class="blog-preview" id="blog">
+            <h2>Latest Insights & Guides</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Published on December 15, 2024 | 12 min read</div>
+                        <h3>Complete Guide to Office Cleaning Standards 2025</h3>
+                        <p>Everything you need to know about maintaining professional office environments, from daily maintenance to deep cleaning protocols.</p>
+                        <a href="#guide-office-standards" class="learn-more">Read Full Guide →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Published on December 10, 2024 | 15 min read</div>
+                        <h3>Industrial Cleaning Compliance: OSHA Requirements</h3>
+                        <p>Navigate the complex world of industrial cleaning regulations with our comprehensive state-by-state compliance guide.</p>
+                        <a href="#guide-industrial-compliance" class="learn-more">Read Full Guide →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">Published on December 5, 2024 | 10 min read</div>
+                        <h3>Green Cleaning Products: Complete Buyer's Guide</h3>
+                        <p>Discover eco-friendly cleaning solutions that work. Compare products, certifications, and effectiveness ratings.</p>
+                        <a href="#guide-green-products" class="learn-more">Read Full Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Experience the Difference?</h2>
+            <p>Join 500+ businesses who trust Elite CleanPro for their commercial cleaning needs</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Your Free Quote Today</a>
+                <a href="#plans" class="btn btn-secondary">View Service Plans</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="https://officecareinc.com" target="_blank">Office Care Inc. Profile</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#service-areas">Service Areas</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#office-cleaning">Office Cleaning</a></li>
+                    <li><a href="#industrial-cleaning">Industrial Cleaning</a></li>
+                    <li><a href="#medical-cleaning">Medical Facilities</a></li>
+                    <li><a href="#retail-cleaning">Retail Spaces</a></li>
+                    <li><a href="#specialized-services">Specialized Services</a></li>
+                    <li><a href="https://officecareinc.com/commercial-cleaning-services" target="_blank">Commercial Cleaning for Offices & Industrial Spaces</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#cleaning-guide">Complete Cleaning Guide</a></li>
+                    <li><a href="#plans">Service Plans</a></li>
+                    <li><a href="#benefits">Benefits Overview</a></li>
+                    <li><a href="#checklist">Free Checklist Download</a></li>
+                    <li><a href="#portal">Client Portal</a></li>
+                    <li><a href="#quote">Request Quote</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal & Contact</h3>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#agreement">Service Agreement</a></li>
+                </ul>
+                <p style="margin-top: 1rem; line-height: 1.8;">
+                    <strong>Contact:</strong><br>
+                    📞 (555) 123-4567<br>
+                    📧 info@elitecleanpro.com<br>
+                    🕐 Mon-Fri: 7AM-6PM
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Elite CleanPro. All rights reserved. | A Division of <a href="https://officecareinc.com" target="_blank" style="color: #64b5f6;">Office Care Inc.</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
